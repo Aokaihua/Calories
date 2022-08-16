@@ -1,0 +1,88 @@
+/**index.wxss**/
+page {
+  background:linear-gradient(#fff,#fff, #fff);
+}
+
+.container {
+  /* background-color: lightblue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header {
+  position: absolute;
+  top:0;
+  height: 100px;
+  width: 100%;
+  color: #fff;
+  /* background-color: lightgreen; */
+  /* font-size: 35px; */
+}
+.welcome {
+  margin-left: 30px;
+  text-shadow:3px 3px 3px rgba(50, 50, 51, 0.6);
+  font-size: 35px;
+  font-weight: bold;
+}
+.show-cal-intake-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: gray; */
+  width: 100%;
+  height: 450px;
+}
+
+
+.calender-container {
+  top: 10px;
+  position: absolute;
+  background-color: lightsalmon;
+  height: 50px;
+  width: 90%;
+  margin: 10px 20px 10px 20px;
+  border-radius: 5px; 
+}
+
+.progress_box{
+  /* 这个也太丑了，到时候记得修改一下 */
+  position: absolute;
+  top: 160px;
+  width:280px;
+  height: 280px; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  /* background-color: crimson; */
+}
+
+.cal-intake-detail-container {
+  top: 550px;
+  position: absolute;
+  padding: 30px;
+  margin: 10px 20px;
+  border-radius: 5px;
+  width: 90%;
+  /* background-color:lightpink; */
+}
+
+/* 呈现表格 */
+.intake-table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+.td {
+    width:50%;
+    justify-content: center;
+    text-align: center;
+}

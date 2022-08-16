@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/what/what",
+    "pages/index/index",
+    "pages/addCal/addCal",
+    "pages/profile/profile",
+    "pages/logs/logs"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath":"pages/index/index",
+        "text": "主页"
+      },
+      {"pagePath": "pages/addCal/addCal",
+        "text": "添加"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }]
+  },
+  "lazyCodeLoading": "requiredComponents"
+}
