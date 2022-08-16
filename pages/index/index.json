@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "calendar": "../../components/calendarWeek/calendarWeek",
+    "progress": "../../components/progressBar/progressBar"
+  }
+}

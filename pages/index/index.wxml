@@ -1,0 +1,45 @@
+<!--index.wxml-->
+
+<view class="container">
+
+  <!-- 放置欢迎词和UI图的位置 -->
+  <view class="header">
+    <view class="welcome">你好，</view>
+    <!-- 这个地方需要customize欢迎信息 -->
+    <view class="welcome">奥开花</view>
+    <view class="welcome ui">
+      <!-- <image src="../../image/index/eat-ice-cream.svg"></image> -->
+    </view>
+  </view>
+
+  <!-- 放置日历和卡路里摄入圆环 -->
+  <view class="show-cal-intake-container">
+    <!-- 日历 -->
+    <view class="calender-container">
+      <calendar bindmydata="mydata"></calendar>
+    </view>
+    <!-- 圆环 -->
+    <view class='progress_box'>
+       <progress canvasWidth="500" id="progressBar"></progress>
+    </view>
+  </view>
+    
+  
+  <!-- 呈现早、中、晚餐以及其他卡路里摄入的数值与占比 -->
+  <view class="cal-intake-detail-container">
+    <view class="intake-table">
+      <!-- 表格内容 -->
+      <block wx:for="{{listData}}" wx:key="{{name}}">
+        <view class="tr">
+          <view class="td">{{item.name}}</view>
+          <view class="td">{{item.cal}}</view>
+          <view class="td">{{item.percent}}</view>
+        </view>
+      </block>
+
+    </view>
+    <!-- <view wx:for="{{array}}">
+      {{item.message}}
+    </view> -->
+  </view>
+</view>
