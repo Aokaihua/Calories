@@ -1,0 +1,19 @@
+<!--pages/search-effects/search-effects.wxml-->
+<view class="main">
+    <view class="header-search">
+        <!-- <image class="searchImg" src="/images/search_icon.png" mode="aspectFill" ></image> -->
+        <input type="text" class="searchInput" focus="{{autoFocus}}" hold-keyborad="true" placeholder="请输入名称进行搜索" placeholder-style="color:#999999" bindinput = "input"></input>
+        <!-- <view class="clearInput" bindtap = "clearInput" wx:if="{{searchText}}"> -->
+            <!-- <image class="clearInputImg" src="/images/clear.png" mode="aspectFill" ></image> -->
+        <!-- </view> -->
+    </view>
+    <view style="padding: 0 24rpx;">
+        <view class="searchResult" wx:if="{{searchText}}">
+             <view class="searchText" data-type="1" bindtap = "toHandleSearch">搜索"{{searchText}}"</view>
+        </view>
+        <view wx:for="{{searchResultList}}" wx:key="index">
+        <text wx:for="{{searchResultList[index]}}"  wx:key="*this" class="{{item == searchText ? 'highlight' : 'normal' }}">{{item}}</text>
+        </view>
+    </view>
+</view>
+	

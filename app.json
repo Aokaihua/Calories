@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/livesearch/search",
     "pages/what/what",
     "pages/index/index",
     "pages/addCal/addCal",
