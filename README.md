@@ -8,10 +8,7 @@
 2. 计算摄入的卡路里，并以progress-bar的形式呈现在主页中；
 3. 点击日历中的日期访问历史饮食记录
 
-![image text](https://github.com/Aokaihua/Calories/blob/master/demo/1.PNG)
-![image text](https://github.com/Aokaihua/Calories/blob/master/demo/2.PNG)
-![image text](https://github.com/Aokaihua/Calories/blob/master/demo/3.PNG)
-![image text](https://github.com/Aokaihua/Calories/blob/master/demo/4.PNG)
+![image text](https://github.com/Aokaihua/Calories/blob/master/demo/bind_together.JPG)
 
 ## TIP
 
