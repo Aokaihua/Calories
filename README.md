@@ -10,7 +10,7 @@
 
 ![image text](https://github.com/Aokaihua/Calories/blob/master/demo/bind_together.JPG)
 
-## TIP
+## Tips
 
 
 1. 由于还没有开始后端的工作，因此先暂时将食物的数据放在addCal.js的初始数据(data)内，能在小程序搜索框内搜到的食物只有：[
