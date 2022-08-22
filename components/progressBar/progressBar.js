@@ -1,13 +1,35 @@
 // components/progressBar/progressBar.js
+const app = getApp();
+const util = require('../../utils/util.js')
+
+
 var screenWidth = wx.getSystemInfoSync().screenWidth;//屏幕宽度
 //由于canvas的单位的px,为了适配所有屏幕，这里之前所有像素单位赋值之前都要换成以rpx为单位的大小乘以xs
 const xs = screenWidth / 750;
 Component({
+  // 组件生命周期
+  lifetimes: {
+    created: function() {
+      
+    },
+    attached: function() {
+      // 在组件实例进入页面节点树时执行
+      var date = this.data.date;
+      this.setData({
+        date,
+      })
+    },
+    detached: function() {
+      // 在组件实例被从页面节点树移除时执行
+    },
+  },
   /**
    * 组件的属性列表
    */
   properties: {
+    date :util.formatTime(new Date()),
     //画布的宽度 单位rpx
+
     canvasWidth: {
       type: Number,
       value: 400
@@ -15,24 +37,25 @@ Component({
     //线条宽度 默认16,单位rpx
     lineWidth: {
       type: Number,
-      value: 16
+      value: 26
     },
-    //线条颜色 默认"#E3AF6A"
+    //线条颜色 默认"#12333F"
     lineColor: {
       type: String,
-      value: "#E3AF6A"
+      value: "#12333F"
     },
     //进度条底色
     bottomColor: {
       type: String,
-      value: "#FFF9F1"
+      // value: "#F1F5F5"
+      value: "#fff"
     },
     //当前的值 
     value: {
       type: Number,
-      value: 1800
+      value: 0
     },
-    //最大值 默认100
+    //最大值 默认2500
     maxValue: {
       type: Number,
       value: 2500
@@ -45,12 +68,12 @@ Component({
     //中间字体大小，单位rpx
     textSize: {
       type: Number,
-      value: 30
+      value: 45
     },
     //中间字体颜色
     textColor: {
       type: String,
-      value: "#E3AF6A"
+      value: "#12333F"
     }
   },
 
@@ -65,6 +88,17 @@ Component({
    * 组件的方法列表
    */
   methods: {
+
+    refresh() {
+      //？怎么感觉有点问题？？🌟
+      var value = this.data.value;
+      console.log(value)
+      this.drawProgressBar()
+      this.setData({
+        value,
+      });
+   },
+ 
     /**
      *绘制环形进度条
      */
@@ -105,6 +139,7 @@ Component({
       var maxValue = this.data.maxValue; //最大值
       var value = this.data.value; //当前的值
       //更新进度值
+      console.log(value)
       this.setData({
         intake: value
       })

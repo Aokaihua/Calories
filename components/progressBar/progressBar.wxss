@@ -16,5 +16,7 @@ canvas {
   position: absolute;
   top: 45%;
   text-align: center;
-  display: block;
+  display: inline-block;
+  font-weight: bold;
 }
+

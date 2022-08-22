@@ -1,0 +1,232 @@
+/* pages/addCal.wxss */
+.show-cal-container {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  /* background-color: lightsalmon; */
+  display: flex;
+  /* color: #fff; */
+  padding-top: 20px;
+}
+
+.title-cal {
+  width: 50%;
+  color: #12333F;
+  /* background-color: lightgreen; */
+  box-sizing: border-box;
+  padding-left:20px;
+  /* text-shadow:3px 3px 3px rgba(50, 50, 51, 0.6); */
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.total-cal {
+  width: 50%;
+  /* text-shadow:3px 3px 3px rgba(50, 50, 51, 0.6); */
+  font-size: 30px;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 20px;
+  color: #12333F;
+}
+
+.btn-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meal {
+  background-color: #F1F5F5;
+  margin-top: 30rpx;
+  border-radius: 15px;
+  width: 90%;
+  padding-bottom: 1rpx;
+  font-weight: bold;
+}
+
+.meal:nth-child(1) {
+  margin-top: 0;
+}
+
+.meal-name {
+  display: flex;
+  padding: 30rpx 30rpx;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 35rpx;
+  color: #12333F;
+}
+
+.meal-name-text {
+  width: 65%;
+  /* background-color: red; */
+}
+
+.meal-calories {
+  text-align: left;
+}
+
+.plus {
+  width: 50rpx;
+  height: 50rpx;
+}
+/* 添加的食物列表 */
+.list {
+    font-weight: 500;
+    color: #000000;
+    font-size: 44rpx;
+    /* margin-bottom: 18rpx; */
+    background-color: #fff;
+}
+
+.list-name {
+  padding: 30rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  /* background-color: lightgreen; */
+}
+
+.list-name-text {
+  /* background-color: red; */
+  width: 65%;
+}
+
+/* .food-calories {
+  background-color: blue;
+} */
+
+.remove {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.line {
+  width: 95%;
+  margin: 0 auto;
+  height: 2rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.add-page {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+
+/* .environment {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 24rpx;
+  margin-top: 25%;
+} */
+
+/* 
+搜索框👇 
+*/
+.header-search{
+  position: relative;
+  margin: 40rpx 24rpx 40rpx 24rpx;
+}
+/*搜索图标*/
+.searchImg{
+  position: absolute;
+  left: 24rpx;
+  bottom: 21rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+/*搜索文本框*/
+.searchInput{
+  width: 83%;
+  height: 70rpx;
+  font-size: 32rpx;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 64rpx;
+  color: #000000;
+  opacity: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-height: unset;
+  background: #F1F5F5;
+  border-radius: 200rpx;
+  padding: 0 58rpx;
+}
+/*清空文本框view*/
+.clearInput{
+  width: 100rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+
+/*清空图标*/
+.clearInputImg{
+  position: absolute;
+  right: 26rpx;
+  bottom: 21rpx;
+  width: 31rpx;
+  height: 31rpx;
+  flex-shrink: 0;
+}
+
+/*搜索结果*/
+.searchResult .searchText{
+  max-width: 93%;
+  margin: 30rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color: #12333F;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-bottom: 30rpx;
+}
+.searchResultItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.result-text {
+  margin: 28rpx;
+}
+
+.searchResultItem-context{
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color: #000000;
+  margin-left: 20rpx;
+  padding: 24rpx 0;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.highlight{
+  color:#12333F;
+}
+.normal{
+  color:#A0AEB3
+}
+/* 
+搜索框👆 
+*/

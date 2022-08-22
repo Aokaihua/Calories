@@ -1,0 +1,61 @@
+<!--pages/addCal.wxml-->
+<!-- box to show total Kcal -->
+<view class="show-cal-container">
+  <view class="title-cal">卡路里</view>
+  <view class="total-cal">{{totalCal}}Cal</view>
+</view>
+
+<!-- 四个能够添加消耗卡路里的按钮 -->
+<view class="btn-container">
+<!-- 每个按钮前面要添加icon，后面要添加加号 -->
+<view class="meal" wx:for="{{mealList}}" wx:for-item="meal">
+  <view class="meal-name" bindtap="popup" id = "{{meal.mealName}}">
+    <view class="meal-name-text">{{meal.mealName}}</view>
+    <view class="meal-calories">{{mealTotalCal[meal.mealName]}}</view>
+    <image src="../../image/addCal/plus.svg" alt="oops" class="plus"></image>
+  </view>
+  <!-- 接下来添加新的食物列表 -->
+  <view class="list" wx:for="{{meal.addFoodList}}" wx:for-item="dish">
+    <view class="line"></view>
+  <!-- list-name里要放bindtap，按后显示input窗口自定义食物的重量 -->
+    <view class="list-name" bindtap="removeFood" data-value="{{dish.name}}">
+      <view class="list-name-text">{{dish.name}}</view>
+      <view class="food-calories">{{dish.cal}}</view>
+      <image src="../../image/addCal/remove.svg" class="remove"></image>
+    </view>
+  </view>
+</view>
+
+</view>
+<!-- 伪页面 -->
+<page-container 
+  show="{{show}}"
+  round="true"
+  overlay="true"
+  position="bottom"
+  close-on-slide-down="false"
+  custom-style="height: 80%;"
+  overlay-style="background-color: rgba(0, 0, 0, 0.7);"
+>
+  <view class="add-page">
+  <!-- 搜索组件👇-->
+  <view class="main">
+    <view class="header-search">
+      <image src="../../image/addCal/search_icon.svg" class="searchImg"></image>
+        <input type="text" class="searchInput" focus="{{autoFocus}}" hold-keyborad="true" placeholder="请输入食物名称进行搜索" bindinput = "input" value="{{searchText}}"></input>
+      <image src="../../image/addCal/search_remove.svg" class="clearInputImg" bindtap="clear"></image>
+    </view>
+    <view style="padding: 0 24rpx;">
+        <view class="searchResult" wx:if="{{searchText}}">
+             <view class="searchText" data-type="1" bindtap = "toHandleSearch">搜索"{{searchText}}"</view>
+        </view>
+        <view wx:for="{{searchResultList}}" wx:key="index" data-value="{{food[index]}}" bindtap="addFood" class="result-text">
+          <text wx:for="{{searchResultList[index]}}"  wx:key="*this" class="{{item == searchText ? 'highlight' : 'normal' }}">{{item}}</text>
+        </view>
+    </view>
+  </view>
+  <!-- 搜索组件👆 -->
+    <!-- <button wx:for="{{food}}" type="primary" bindtap="addFood" data-value = "{{food[index]}}">{{food[index]["name"]}}</button> -->
+    
+  </view>
+</page-container>

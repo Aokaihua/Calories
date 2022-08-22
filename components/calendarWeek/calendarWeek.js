@@ -17,7 +17,7 @@ Component({
     dateCurrent: new Date(), // 正选择的当前日期
     dateCurrentStr: '', // 正选择日期的 id
     dateMonth: '1月', // 正显示的月份
-    dateListArray: ['日', '一', '二', '三', '四', '五', '六'],
+    dateListArray: ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
   },
   ready: function () {
     var today = utils.formatTime2(new Date());
@@ -31,6 +31,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
+
     tiaotime(e) {
       let data = e.detail.value.split("-")
       var d = new Date(Number(data[0]), Number(data[1]) - 1, Number(data[2]));

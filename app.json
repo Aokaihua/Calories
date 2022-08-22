@@ -1,10 +1,7 @@
 {
   "pages":[
-    "pages/what/what",
-    "pages/index/index",
     "pages/addCal/addCal",
-    "pages/profile/profile",
-    "pages/logs/logs"
+    "pages/index/index"
     
   ],
   "window":{
@@ -22,15 +19,14 @@
     "list": [
       {
         "pagePath":"pages/index/index",
-        "text": "主页"
+        "iconPath": "image/tabbar/home.png",
+        "selectedIconPath": "image/tabbar/home_selected.png"
       },
       {"pagePath": "pages/addCal/addCal",
-        "text": "添加"
-      },
-      {
-        "pagePath": "pages/profile/profile",
-        "text": "我的"
-      }]
+        "iconPath": "image/tabbar/plus.png",
+        "selectedIconPath": "image/tabbar/plus_selected.png"
+      }
+    ]
   },
   "lazyCodeLoading": "requiredComponents"
 }

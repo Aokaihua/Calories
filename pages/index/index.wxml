@@ -1,26 +1,42 @@
 <!--index.wxml-->
 
-<view class="container">
 
-  <!-- 放置欢迎词和UI图的位置 -->
+  <!-- 放置欢迎词和头像的位置 -->
   <view class="header">
-    <view class="welcome">你好，</view>
+    <view class="welcome">
+      <view class="welcome-text">你好，</view>
     <!-- 这个地方需要customize欢迎信息 -->
-    <view class="welcome">奥开花</view>
-    <view class="welcome ui">
-      <!-- <image src="../../image/index/eat-ice-cream.svg"></image> -->
+      <view class="welcome-name">欢迎来到Calories!👏</view>
     </view>
+    <!-- 放头像 -->
+    <!-- <view class="userinfo">
+      <block wx:if="{{canIUseOpenData}}">
+        <view class="userinfo-avatar" bindtap="bindViewTap">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <open-data type="userNickName"></open-data>
+      </block>
+      <block wx:elif="{{!hasUserInfo}}">
+        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+        <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+        <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+      </block>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view> -->
   </view>
 
   <!-- 放置日历和卡路里摄入圆环 -->
   <view class="show-cal-intake-container">
     <!-- 日历 -->
     <view class="calender-container">
-      <calendar bindmydata="mydata"></calendar>
+      <calendar bindmydata="mydata" bindmydata="getCertainDayData"></calendar>
     </view>
     <!-- 圆环 -->
     <view class='progress_box'>
-       <progress canvasWidth="500" id="progressBar"></progress>
+       <progress canvasWidth="500" value="{{totalCal}}" date="{{date}}" id="progressBar"></progress>
     </view>
   </view>
     
@@ -29,17 +45,13 @@
   <view class="cal-intake-detail-container">
     <view class="intake-table">
       <!-- 表格内容 -->
-      <block wx:for="{{listData}}" wx:key="{{name}}">
+      <block wx:for="{{mealName}}">
         <view class="tr">
-          <view class="td">{{item.name}}</view>
-          <view class="td">{{item.cal}}</view>
-          <view class="td">{{item.percent}}</view>
+          <view class="td" id="meal-name">{{mealName[index]}}</view>
+          <view class="td" id="meal-cal">{{mealTotalCal[mealName[index]]}}Cal</view>
+          <!-- <view class="td" id="percent">{{(totalCal==0?0:(mealTotalCal[mealName[index]]/totalCal))*100}}%</view> -->
         </view>
       </block>
 
     </view>
-    <!-- <view wx:for="{{array}}">
-      {{item.message}}
-    </view> -->
   </view>
-</view>

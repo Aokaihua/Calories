@@ -1,31 +1,52 @@
 /**index.wxss**/
+
 page {
   background:linear-gradient(#fff,#fff, #fff);
+  height: 100%;
+  width: 100%;
 }
 
-.container {
-  /* background-color: lightblue; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
 
 .header {
-  position: absolute;
-  top:0;
+  position: relative;
   height: 100px;
   width: 100%;
-  color: #fff;
+  display: flex;
+  /* flex-direction: column; */
   /* background-color: lightgreen; */
   /* font-size: 35px; */
 }
 .welcome {
   margin-left: 30px;
-  text-shadow:3px 3px 3px rgba(50, 50, 51, 0.6);
-  font-size: 35px;
+  /* text-shadow:3px 3px 3px rgba(50, 50, 51, 0.6); */
+  font-size: 60rpx;
   font-weight: bold;
 }
+.welcome-text {
+  color: #A0AEB3;
+}
+.welcome-name {
+  color: #12333F;
+}
+
+/* 放头像 */
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  position: absolute;
+  right: 40rpx;
+  overflow: hidden;
+  width: 155rpx;
+  height: 155rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+} */
+/* 放卡路里 */
 .show-cal-intake-container {
   position: relative;
   display: flex;
@@ -39,9 +60,9 @@ page {
 
 
 .calender-container {
-  top: 10px;
+  top: 5px;
   position: absolute;
-  background-color: lightsalmon;
+  /* background-color: lightsalmon; */
   height: 50px;
   width: 90%;
   margin: 10px 20px 10px 20px;
@@ -52,19 +73,22 @@ page {
   /* 这个也太丑了，到时候记得修改一下 */
   position: absolute;
   top: 160px;
-  width:280px;
-  height: 280px; 
+  width:500rpx;
+  height: 500rpx; 
   display: flex; 
   align-items: center;
   justify-content: center;
-  /* background-color: crimson; */
+  width: 90%;
+  height: 70%;
+  border-radius: 15px;
+  background-color: #EDF8B8;
 }
 
 .cal-intake-detail-container {
   top: 550px;
   position: absolute;
-  padding: 30px;
-  margin: 10px 20px;
+  padding: 20px;
+  /* margin: 10px 20px; */
   border-radius: 5px;
   width: 90%;
   /* background-color:lightpink; */
@@ -72,17 +96,41 @@ page {
 
 /* 呈现表格 */
 .intake-table {
+  margin-top: 47rpx;
   border: 0px solid darkgray;
+  border-radius: 15px;
+  color: #12333F;
+  font-size: 30rpx;
 }
 .tr {
+  border-radius: 15px;
   display: flex;
-  width: 100%;
   justify-content: center;
-  height: 3rem;
+  height: 2.8rem;
   align-items: center;
+  font-weight: bold;
+}
+.tr:nth-child(1),
+.tr:nth-child(3) 
+{
+  background-color: #12333F;
+  color: #fff;
+}
+.tr:nth-child(2),
+.tr:nth-child(4) 
+{
+  background-color: #EDF8B8;
+  color: #12333F;
 }
 .td {
     width:50%;
     justify-content: center;
     text-align: center;
+}
+#meal-name {
+  text-align:center;
+}
+
+#meal-cal {
+  text-align: center;
 }

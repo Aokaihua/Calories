@@ -2,6 +2,8 @@
 <view class="progress-container">
   <canvas canvas-id="progress" style="width:{{width}}rpx;height:{{height}}rpx;"></canvas>
   <!-- 环形圈中的文字 -->
-  <text style="font-size:{{textSize}}rpx;color:{{textColor}}">已经摄入:{{intake}}Cal</text>
+  <text style="font-size: 35rpx;color: rgb(160,174,179);">已经摄入:</text>
+  <text style="font-size:{{textSize}}rpx;color:{{textColor}}"> 
+  {{intake}}Cal</text>
   <!-- <text style="font-size:{{textSize}}rpx;color:{{textColor}}">目标:2500Cal</text> -->
 </view>
